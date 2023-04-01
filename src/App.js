@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { MainButton, useShowPopup } from "@vkruglikov/react-telegram-web-app";
 
-function App() {
+const App = () => {
+  const showPopup = useShowPopup();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      Some page content...
+      <MainButton
+        text="SHOW POPUP"
+        onClick={() => {
+          showPopup({
+            message: "Hello, I'am showPopup handle",
+          });
+        }}
+      />
+    </>
   );
-}
-
+};
 export default App;
